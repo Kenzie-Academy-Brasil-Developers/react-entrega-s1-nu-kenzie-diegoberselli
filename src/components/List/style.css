@@ -1,0 +1,33 @@
+.list {
+  width: 560px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  margin-left: 59px;
+  color: #212529;
+}
+button {
+  padding: 10.5px 15px;
+  border-radius: 8px;
+  border: 0ch;
+  background-color: #e9ecef;
+  color: #868e96;
+  margin-left: 16px;
+}
+
+.btn-todos {
+  background-color: #fd377e;
+  color: #ffffff;
+}
+
+h2 {
+  margin: 0%;
+  font-size: 16px;
+}
+
+.list header {
+  display: flex;
+  padding-bottom: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
