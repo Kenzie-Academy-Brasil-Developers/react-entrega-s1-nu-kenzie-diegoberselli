@@ -75,8 +75,13 @@
   font-weight: 400;
 }
 
-@media only screen and (max-device-width: 700px) {
+@media only screen and (max-width: 830px) {
   .Card {
-    width: 400px;
+    max-width: 453px;
+    width: 100%;
+  }
+  .Card-green {
+    width: 100%;
+    max-width: 450px;
   }
 }

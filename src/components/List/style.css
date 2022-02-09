@@ -45,7 +45,7 @@ h2 {
   display: flex;
 }
 
-@media only screen and (max-device-width: 700px) {
+@media only screen and (max-device-width: 830px) {
   .list header {
     margin: 0 auto;
     justify-content: flex-start;

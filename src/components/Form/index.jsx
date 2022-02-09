@@ -8,6 +8,9 @@ function Form({ listTransaction, setListTransactions }) {
 
   function addTransaction() {
     const addObject = { description, type, value };
+    if (addObject.type === "Despesas") {
+      addObject.value *= -1;
+    }
     setListTransactions([...listTransaction, addObject]);
   }
 

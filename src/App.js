@@ -8,7 +8,6 @@ import TotalMoney from './components/TotalMoney';
 
 function App() {
   const [listTransaction, setListTransactions] = useState([]);
-  console.log(listTransaction)
 
   return (
 
