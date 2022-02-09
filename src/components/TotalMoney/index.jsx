@@ -1,8 +1,9 @@
 import "./style.css";
 
-function TotalMoney({ transactions }) {
+function TotalMoney({ listTransactions }) {
   function valorTotal() {
-    return transactions.reduce((acc, curr) => acc + curr.value, 0);
+    const entrada = listTransactions.filter((item) => item.type === "Entrada");
+    return entrada.reduce((acc, curr) => acc + curr.value, 0);
   }
 
   return (

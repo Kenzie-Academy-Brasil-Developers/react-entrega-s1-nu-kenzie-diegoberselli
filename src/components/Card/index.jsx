@@ -3,21 +3,39 @@ import "./style.css";
 
 function Card({ transaction }) {
   return (
-    <div className="Card">
+    
+    <>
+    {transaction.type === "Entrada" ? (
+    <div className="Card-green">
       <div className="left">
         <h3>{transaction.description}</h3>
         <p>{transaction.type}</p>
       </div>
-      <div>
-        <p className="right">
-          <span>R$</span> {transaction.value}
+      <div className="right"> 
+        <p>
+          <span>R$</span> {transaction.value<0 ?transaction.value*-1:transaction.value}
         </p>
-        <button className="btn-trash">
-          <FaTrash />
-        </button>
+        <button className="btn-trash"> <FaTrash /> </button>
       </div>
     </div>
-  );
+    ):
+  
+    (
+      <div className="Card">
+      <div className="left">
+        <h3>{transaction.description}</h3>
+        <p>{transaction.type}</p>
+      </div>
+      <div className="right"> 
+        <p>
+          <span>R$</span> {transaction.value<0 ?transaction.value*-1:transaction.value}
+        </p>
+        <button className="btn-trash"> <FaTrash /> </button>
+      </div>
+    </div>
+    )}
+    </>
+  )
 }
 
 export default Card;

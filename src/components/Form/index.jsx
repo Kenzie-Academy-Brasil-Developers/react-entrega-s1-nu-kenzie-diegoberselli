@@ -2,17 +2,13 @@ import { useState } from "react";
 import "./style.css";
 
 function Form({ listTransaction, setListTransactions }) {
-  const [input, setInput] = useState({
-    description: "",
-    type: "entrada",
-    value: 0,
-  });
+  const [description, setDescription] = useState("");
+  const [type, setType] = useState("Entrada");
+  const [value, setValue] = useState(0);
 
-  function addTransaction(input) {
-    typeof input.value != "number"
-      ? (input.value = parseInt(input.value))
-      : (input.value = input.value);
-    setListTransactions([...listTransaction, input]);
+  function addTransaction() {
+    const addObject = { description, type, value };
+    setListTransactions([...listTransaction, addObject]);
   }
 
   return (
@@ -21,10 +17,8 @@ function Form({ listTransaction, setListTransactions }) {
         Descrição
         <input
           placeholder="Digite aqui sua descrição"
-          value={input.description}
-          onChange={(event) =>
-            setInput({ ...input, description: event.target.value })
-          }
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
         />
       </label>
       <div>
@@ -33,27 +27,23 @@ function Form({ listTransaction, setListTransactions }) {
           <input
             type="number"
             placeholder="R$"
-            value={input.value}
-            onChange={(event) =>
-              setInput({ ...input, value: event.target.value })
-            }
+            value={value}
+            onChange={(event) => setValue(Number(event.target.value))}
           />
         </label>
         <label>
           Tipo de Valor
           <select
-            value={input.type}
-            onChange={(event) =>
-              setInput({ ...input, type: event.target.value })
-            }
+            value={type}
+            onChange={(event) => setType(event.target.value)}
           >
             <option value="Entrada">Entrada</option>
-            <option value="Saída">Saída</option>
+            <option value="Despesas">Despesas</option>
           </select>
         </label>
       </div>
 
-      <button className="btn-form" onClick={() => addTransaction(input)}>
+      <button className="btn-form" onClick={() => addTransaction()}>
         Inserir Valor
       </button>
     </form>

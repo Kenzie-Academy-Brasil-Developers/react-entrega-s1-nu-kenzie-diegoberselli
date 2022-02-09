@@ -28,3 +28,21 @@
   border: 1.4px solid #e9ecef;
   border-radius: 8px;
 }
+.btn-inicio:hover {
+  background-color: #868e96;
+  color: #ffff;
+}
+
+@media only screen and (max-device-width: 700px) {
+  .content {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .head {
+    width: 100%;
+    display: flex;
+  }
+  .btn-inicio {
+    margin-left: 200px;
+  }
+}

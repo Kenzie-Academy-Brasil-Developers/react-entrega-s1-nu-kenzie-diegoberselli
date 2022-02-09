@@ -7,7 +7,7 @@ function Header() {
         <h1>
           Nu<span>Kenzie</span>
         </h1>
-        <button>Inicio</button>
+        <button className="btn-inicio">Inicio</button>
       </div>
     </header>
   );

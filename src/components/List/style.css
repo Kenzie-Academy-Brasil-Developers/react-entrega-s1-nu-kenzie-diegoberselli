@@ -6,6 +6,7 @@
   margin-left: 59px;
   color: #212529;
 }
+
 button {
   padding: 10.5px 15px;
   border-radius: 8px;
@@ -13,11 +14,19 @@ button {
   background-color: #e9ecef;
   color: #868e96;
   margin-left: 16px;
+  cursor: pointer;
 }
 
 .btn-todos {
   background-color: #fd377e;
   color: #ffffff;
+}
+.btn-geral:hover {
+  background-color: #868e96;
+  color: #ffffff;
+}
+.btn-geral:active {
+  background-color: #fd377e;
 }
 
 h2 {
@@ -30,4 +39,15 @@ h2 {
   padding-bottom: 14px;
   align-items: center;
   justify-content: space-between;
+}
+
+.list header div {
+  display: flex;
+}
+
+@media only screen and (max-device-width: 700px) {
+  .list header {
+    margin: 0 auto;
+    justify-content: flex-start;
+  }
 }

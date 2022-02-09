@@ -7,20 +7,20 @@ import TotalMoney from './components/TotalMoney';
 
 
 function App() {
-  const [listTransaction, setListTransactions] = useState([])
-
+  const [listTransaction, setListTransactions] = useState([]);
+  console.log(listTransaction)
 
   return (
 
     <div className="App">
       <Header/>
       <div className='Container'>
-        <div>
+        <div className='form-container'>
             <Form listTransaction = {listTransaction} setListTransactions = {setListTransactions}/>
-            <TotalMoney transactions = {listTransaction} /> 
+            <TotalMoney listTransactions={listTransaction} /> 
           
         </div>  
-            <List transactions={listTransaction} />
+            <List listTransactions={listTransaction}/>
       </div>
     </div>
   );
