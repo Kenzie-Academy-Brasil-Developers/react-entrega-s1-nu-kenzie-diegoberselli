@@ -1,7 +1,7 @@
 import { FaTrash } from "react-icons/fa";
 import "./style.css";
 
-function Card({ transaction }) {
+function Card({ transaction, remove, name }) {
   return (
     <>
       {transaction.type === "Entrada" ? (
@@ -17,9 +17,8 @@ function Card({ transaction }) {
                 ? transaction.value * -1
                 : transaction.value}
             </p>
-            <button className="btn-trash">
-              {" "}
-              <FaTrash />{" "}
+            <button className="btn-trash" onClick={() => remove(name)}>
+              <FaTrash />
             </button>
           </div>
         </div>
@@ -36,9 +35,8 @@ function Card({ transaction }) {
                 ? transaction.value * -1
                 : transaction.value}
             </p>
-            <button className="btn-trash">
-              {" "}
-              <FaTrash />{" "}
+            <button className="btn-trash" onClick={() => remove(name)}>
+              <FaTrash />
             </button>
           </div>
         </div>

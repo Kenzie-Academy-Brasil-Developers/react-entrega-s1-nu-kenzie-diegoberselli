@@ -8,6 +8,7 @@ import TotalMoney from './components/TotalMoney';
 
 function App() {
   const [listTransaction, setListTransactions] = useState([]);
+  const [filtrados, setFiltrados] = useState(listTransaction)
 
   return (
 
@@ -15,11 +16,11 @@ function App() {
       <Header/>
       <div className='Container'>
         <div className='form-container'>
-            <Form listTransaction = {listTransaction} setListTransactions = {setListTransactions}/>
+            <Form listTransaction = {listTransaction} setListTransactions = {setListTransactions} setFiltrados={setFiltrados} filtrados={filtrados}/>
             <TotalMoney listTransactions={listTransaction} /> 
           
         </div>  
-            <List listTransactions={listTransaction}/>
+            <List listTransactions={listTransaction} filtrados={filtrados} setFiltrados={setFiltrados} setListTransactions={setListTransactions}/>
       </div>
     </div>
   );

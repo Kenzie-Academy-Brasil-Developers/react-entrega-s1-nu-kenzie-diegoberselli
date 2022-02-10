@@ -1,17 +1,18 @@
 import { useState } from "react";
 import "./style.css";
 
-function Form({ listTransaction, setListTransactions }) {
+function Form({ listTransaction, setListTransactions, setFiltrados, filtrados}) {
   const [description, setDescription] = useState("");
   const [type, setType] = useState("Entrada");
   const [value, setValue] = useState(0);
+  const addObject = { description, type, value };
 
   function addTransaction() {
-    const addObject = { description, type, value };
     if (addObject.type === "Despesas") {
       addObject.value *= -1;
     }
     setListTransactions([...listTransaction, addObject]);
+    setFiltrados([...filtrados, addObject]);
   }
 
   return (
